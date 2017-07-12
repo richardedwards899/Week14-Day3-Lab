@@ -8,7 +8,7 @@ class Board extends React.Component {
 
     const boardSquares = this.props.squares.map((square, index) => {
       return (
-        <BoardSquare key={index}>{square}</BoardSquare>
+        <BoardSquare value={index} key={index}>{square}</BoardSquare>
       );
     })
 

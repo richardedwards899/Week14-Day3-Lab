@@ -7,7 +7,7 @@ class GameContainer extends React.Component {
     super(props)
     this.state = {
       board: [null, null, null, null, null, null, null, null, null],
-      winner: "No winner yet",
+      winner: false,
       currentPlayer: "Player1"
     }
   }
@@ -28,12 +28,12 @@ class GameContainer extends React.Component {
       symbol = 'X';
     else symbol = 'O';
 
-
     while (!winner && counter < winningCombos.length){
       let array = winningCombos[counter];
       winner = this.checkForWinner(array[0], array[1], array[2], symbol);
       counter++;
     }
+    return winner;
   }
 
   checkForWinner(index1, index2, index3, symbol){
@@ -57,11 +57,29 @@ class GameContainer extends React.Component {
     let nextPlayer =  this.getNameOfNextPlayer();
 
     this.setState( {
-      board: newArray,
-      currentPlayer: nextPlayer
+      board: newArray
     });
 
     let winCheck = this.checkAllCombos();
+
+    if (winCheck){
+      console.log("currentPlayer: ", this.state.currentPlayer);
+      this.setState({
+        winner: true
+      })
+    } else {
+      this.setState({
+        currentPlayer: nextPlayer
+      })
+    }
+  }
+
+  displayGameMessage(){
+    if (this.state.winner){
+      return this.state.currentPlayer+ " has WON!!";
+    } else {
+      return this.state.currentPlayer+ " to play!";
+    }
   }
 
   render() {
@@ -71,11 +89,10 @@ class GameContainer extends React.Component {
         <div id="GameContainer">
           <Board currentPlayer={this.state.currentPlayer} onSquareClick={this.updateBoard.bind(this)} squares={this.state.board}/>
         </div>
-        <h1>{this.state.currentPlayer} to play!</h1>
-      </div>
+          <h1>{this.displayGameMessage()}</h1>
+        </div>
     )
   }
-
 }
 
 export default GameContainer

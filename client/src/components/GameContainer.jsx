@@ -8,14 +8,14 @@ class GameContainer extends React.Component {
     this.state = {
       board: [null, null, null, null, null, null, null, null, null],
       winner: false,
-      currentPlayer: "Player1"
+      currentPlayer: "Player 1"
     }
   }
 
   getNameOfNextPlayer() {
-    if (this.state.currentPlayer === 'Player1')
-      return 'Player2';
-    else return 'Player1';
+    if (this.state.currentPlayer === 'Player 1')
+      return 'Player 2';
+    else return 'Player 1';
   }
 
   checkAllCombos(){
@@ -24,7 +24,7 @@ class GameContainer extends React.Component {
     let counter = 0;
     let symbol;
 
-    if (this.state.currentPlayer === 'Player1')
+    if (this.state.currentPlayer === 'Player 1')
       symbol = 'X';
     else symbol = 'O';
 
@@ -86,20 +86,22 @@ class GameContainer extends React.Component {
     this.setState({
       board: [null, null, null, null, null, null, null, null, null],
       winner: false,
-      currentPlayer: "Player1"
+      currentPlayer: "Player 1"
     })
   }
 
   render() {
     return (
-      <div>
-        <h1>Tic Tac Toe</h1>
+      <div id="app">
+      <div id="main-container">
+        <p>Tic Tac Toe</p>
         <div id="GameContainer">
           <Board currentPlayer={this.state.currentPlayer} onSquareClick={this.updateBoard.bind(this)} squares={this.state.board}/>
         </div>
-          <h1>{this.displayGameMessage()}</h1>
+          <p>{this.displayGameMessage()}</p>
           <button onClick={this.resetGame.bind(this)}>Reset</button>
         </div>
+      </div>
     )
   }
 }

@@ -5,7 +5,7 @@ class BoardSquare extends React.Component {
   handleClick(event){
     const index = this.props.value;
     let symbol = 'X';
-    if (this.props.currentPlayer === 'Player2') {
+    if (this.props.currentPlayer === 'Player 2') {
       symbol = 'O';
     }
     if (!this.props.children){
@@ -16,9 +16,9 @@ class BoardSquare extends React.Component {
   render() {
     return (
       <div className="square-container" onClick={this.handleClick.bind(this)}>
-        <h1>
+        <p>
           {this.props.children}
-        </h1>
+        </p>
       </div>
     )
   }

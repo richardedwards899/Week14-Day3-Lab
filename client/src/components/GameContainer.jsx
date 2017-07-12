@@ -13,6 +13,9 @@ class GameContainer extends React.Component {
   }
 
   //to do: add a fucntion to check whether we have a winner
+  updateBoard(index, playerSymbol){
+    this.state.board[index] = playerSymbol;
+  }
 
   render() {
     return (
@@ -21,7 +24,7 @@ class GameContainer extends React.Component {
         <div id="GameContainer">
           <Board squares={this.state.board}/>
         </div>
-        <h1>Player turn</h1>
+        <h1>{this.state.currentPlayer} to play!</h1>
       </div>
     )
   }

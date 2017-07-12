@@ -6,7 +6,7 @@ class BoardSquare extends React.Component {
     return (
       <div className="square-container">
         <h1>
-          X
+          {this.props.children}
         </h1>
       </div>
     )
@@ -14,4 +14,4 @@ class BoardSquare extends React.Component {
 
 }
 
-export default BoardSquare
+export default BoardSquare;

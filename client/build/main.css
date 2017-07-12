@@ -12,4 +12,5 @@
   background-color: yellow;
   align-items: center;
   justify-content: space-around;
+  border: 1px solid black;
 }

@@ -3,7 +3,12 @@ import React from 'react'
 class BoardSquare extends React.Component {
 
   handleClick(event){
-    console.log("booyah: ", this.props.value);
+    const index = this.props.value;
+    let symbol = 'X';
+    if (this.props.currentPlayer === 'Player2') {
+      symbol = 'O';
+    }
+    this.props.onSquareClick(index, symbol);
   }
 
   render() {

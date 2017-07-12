@@ -1,14 +1,14 @@
 import React from 'react'
 import BoardSquare from './BoardSquare.jsx'
 
-//Board is created with props: 'squares'
+//Board is created with props: 'squares', 'onSquareClick'
 class Board extends React.Component {
 
   render() {
 
     const boardSquares = this.props.squares.map((square, index) => {
       return (
-        <BoardSquare value={index} key={index}>{square}</BoardSquare>
+        <BoardSquare currentPlayer={this.props.currentPlayer} onSquareClick={this.props.onSquareClick} value={index} key={index}>{square}</BoardSquare>
       );
     })
 

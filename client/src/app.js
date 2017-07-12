@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CommentBox from './components/CommentBox.jsx';
+import GameContainer from './components/GameContainer.jsx';
 
 window.addEventListener('load', function () {
   ReactDOM.render(

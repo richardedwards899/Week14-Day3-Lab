@@ -1,5 +1,5 @@
 import React from 'react'
-// import CommentList from './CommentList'
+import Board from './Board'
 
 class GameContainer extends React.Component {
 
@@ -12,10 +12,16 @@ class GameContainer extends React.Component {
     }
   }
 
+  //to do: add a fucntion to check whether we have a winner
+
   render() {
     return (
-      <div id="GameContainer">
-        <Board />
+      <div>
+        <h1>Tic Tac Toe</h1>
+        <div id="GameContainer">
+          <Board squares={this.state.board}/>
+        </div>
+        <h1>Player turn</h1>
       </div>
     )
   }

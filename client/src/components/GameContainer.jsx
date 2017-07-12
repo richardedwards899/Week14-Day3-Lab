@@ -82,6 +82,14 @@ class GameContainer extends React.Component {
     }
   }
 
+  resetGame() {
+    this.setState({
+      board: [null, null, null, null, null, null, null, null, null],
+      winner: false,
+      currentPlayer: "Player1"
+    })
+  }
+
   render() {
     return (
       <div>
@@ -90,6 +98,7 @@ class GameContainer extends React.Component {
           <Board currentPlayer={this.state.currentPlayer} onSquareClick={this.updateBoard.bind(this)} squares={this.state.board}/>
         </div>
           <h1>{this.displayGameMessage()}</h1>
+          <button onClick={this.resetGame.bind(this)}>Reset</button>
         </div>
     )
   }

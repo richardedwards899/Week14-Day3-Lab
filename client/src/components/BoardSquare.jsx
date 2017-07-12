@@ -4,7 +4,7 @@ class BoardSquare extends React.Component {
 
   render() {
     return (
-      <div className="comment">
+      <div className="square-container">
         <h1>
           X
         </h1>

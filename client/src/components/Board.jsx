@@ -12,6 +12,7 @@ class Board extends React.Component {
           currentPlayer={this.props.currentPlayer}
           onSquareClick={this.props.onSquareClick}
           value={index}
+          winner={this.props.winner}
           key={index}>{square}</BoardSquare>
       );
     })

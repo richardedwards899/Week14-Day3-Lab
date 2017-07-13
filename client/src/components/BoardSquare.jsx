@@ -8,7 +8,7 @@ class BoardSquare extends React.Component {
     if (this.props.currentPlayer === 'Player 2') {
       symbol = 'O';
     }
-    if (!this.props.children){
+    if (!this.props.children && !this.props.winner){
       this.props.onSquareClick(index, symbol);
     }
   }

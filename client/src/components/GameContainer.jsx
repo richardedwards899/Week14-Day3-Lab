@@ -96,7 +96,7 @@ class GameContainer extends React.Component {
       <div id="main-container">
         <p>Tic Tac Toe</p>
         <div id="GameContainer">
-          <Board currentPlayer={this.state.currentPlayer} onSquareClick={this.updateBoard.bind(this)} squares={this.state.board}/>
+          <Board currentPlayer={this.state.currentPlayer} winner={this.state.winner} onSquareClick={this.updateBoard.bind(this)} squares={this.state.board}/>
         </div>
           <p>{this.displayGameMessage()}</p>
           <button onClick={this.resetGame.bind(this)}>Reset</button>
